@@ -1,0 +1,21 @@
+<!--generate random number btwn given range -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let start = parseInt(prompt("enter starting number"));
+        let end = parseInt(prompt("enter ending number"));
+        
+        let diff = end - start + 1;
+        n = Math.floor(Math.random() * diff) + start;
+        
+        alert(n);
+    </script>
+</body>
+</html>

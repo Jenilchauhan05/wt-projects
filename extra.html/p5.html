@@ -1,0 +1,22 @@
+<!--Square and sum the array elements using the arrow function and then find the average of the array.-->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums = [1, 2, 3, 4, 5];
+        
+        const square = nums.map( (n) => n * n);
+        console.log(square);
+        
+        let sum = square.reduce((acc, val) => acc + val);
+        
+        let avg = sum / nums.length;
+        console.log(avg);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- Write a JavaScript function to extract unique characters from a string. Example: str=“abcdabcdefgggh” ans=“abcdefgh” -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = "abcdabcdefggghhh";
+
+    function getUnique(str) {
+      let ans = "";
+
+      for (let i = 0; i < str.length; i++) {
+        let crnt = str[i];
+
+        if (ans.indexOf(crnt) == -1) {
+          ans += crnt;
+        }
+      }
+      return ans;
+    }
+
+    getUnique(str);
+    
+    // method 2
+
+    function getUnique(str) {
+      return [...new Set(str)].join('');
+    }
+
+    str = "abcdabcdefggghhh";
+    console.log(getUnique(str));
+    
+  </script>
+</body>
+</html>

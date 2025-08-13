@@ -1,0 +1,21 @@
+<!-- Write a function called doubleAndReturnArgs which accepts an array and a variable number of arguments. The function should return a new array with the original array values and all of the additional arguments doubled. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const doubleAndReturnArgs = (arr, ...args) => [
+            ...arr,
+            ...args.map((v) => v * 2),
+        ];
+        
+        let ans = doubleAndReturnArgs([1, 2, 3], 4, 5);
+        console.log(ans);
+    </script>
+</body>
+</html>
