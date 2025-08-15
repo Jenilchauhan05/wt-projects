@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            text-align: right;
+        }
+        button{
+            height: 20px;
+            width: 40px;
+            background-color: rgb(56, 55, 55);
+            color: white;
+            font-weight: 700;
+        }
+        table{
+            margin-left: 250px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="test"></h1>
+    <h1 class="test2"></h1>
+    <table border="2" cellspacing="0">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="inputtext">
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="allclear()">AC</button></td>
+            <td><button onclick="digit()">-></button></td>
+            <td><button onclick="txtinput('%')">%</button></td>
+            <td><button onclick="txtinput('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="txtinput('7')">7</button></td>
+            <td><button onclick="txtinput('8')">8</button></td>
+            <td><button onclick="txtinput('9')">9</button></td>
+            <td><button onclick="txtinput('')"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="txtinput('4')">4</button></td>
+            <td><button onclick="txtinput('5')">5</button></td>
+            <td><button onclick="txtinput('6')">6</button></td>
+            <td><button onclick="txtinput('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="txtinput('1')">1</button></td>
+            <td><button onclick="txtinput('2')">2</button></td>
+            <td><button onclick="txtinput('3')">3</button></td>
+            <td><button onclick="txtinput('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="txtinput('00')">00</button></td>
+            <td><button onclick="txtinput('0')">0</button></td>
+            <td><button onclick="txtinput('.')">.</button></td>
+            <td><button onclick="ans()">=</button></td>
+        </tr>
+
+    </table>
+    <script>
+        function txtinput(num){
+            document.getElementById("inputtext").value+=num
+
+        }
+        function ans(){
+          temp=  document.getElementById("inputtext").value
+          document.getElementById("inputtext").value=eval(temp); 
+        }
+        function allclear(){
+            
+           document.getElementById('inputtext').value= ''
+           
+           
+        }
+        function digit(){
+            temp=document.getElementById("inputtext").value
+            final=temp.slice(0,-1);
+            document.getElementById("inputtext").value=final
+        }
+    </script>
+</body>
+</html>

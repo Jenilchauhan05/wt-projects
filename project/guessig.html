@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<body>
+    <h1>Guessing Game</h1>
+    
+    <script>
+        const max = (prompt("Enter the max number:"));
+        const random = Math.floor(Math.random() * max) + 1;
+
+        let guess = prompt("Guess the number or type 'quit' to exit:");
+
+        while (true) {
+            if (guess === "quit") {
+                console.log("❌ User quit the game.");
+                break;
+            }
+
+            const numGuess = parseInt(guess);  // Convert string to number
+
+            if (numGuess === random) {
+                console.log("🎉 Congrats, you are right!");
+                break;
+            }
+
+            else if (numGuess < random) {
+                guess = prompt("Too low! Enter a larger number:");
+            }
+
+            else if (numGuess > random) {
+                guess = prompt("Too high! Enter a smaller number:");
+            }
+            
+    </script>
+</body>
+</html>

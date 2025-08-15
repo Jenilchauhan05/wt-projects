@@ -1,0 +1,32 @@
+<!--Write an HTML ƒle with JavaScript that ƒnds position of ƒrst occurrence of vowel “a”, last 
+occurrence of vowel “a” in a given word and returns the string between them. For example, 
+ajanta- then script would return ƒrst occurrence of “a”-that is position 1 and last
+ occurrence-6 and string between them is “jant”. (B)-->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find 'a' Positions and Between String</title>
+</head>
+<body>
+    <script>
+        let word = prompt("Enter a word:");
+        word = word.toLowerCase(); // Handle uppercase input as well
+
+        let firstPos = word.indexOf('a');
+        let lastPos = word.lastIndexOf('a');
+
+        if (firstPos === -1) {
+            document.write("<h3>No 'a' found in the word.</h3>");
+        } else if (firstPos === lastPos) {
+            document.write(`<h3>Only one 'a' found at position ${firstPos + 1}. No string in between.</h3>`);
+        } else {
+            let between = word.substring(firstPos + 1, lastPos);
+            document.write(`<h3>First 'a' at position: ${firstPos + 1}</h3>`);
+            document.write(`<h3>Last 'a' at position: ${lastPos + 1}</h3>`);
+            document.write(`<h3>String between them: "${between}"</h3>`);
+        }
+    </script>
+</body>
+</html>

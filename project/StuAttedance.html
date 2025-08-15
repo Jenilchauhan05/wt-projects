@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Attendance Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .attendance-btn {
+      margin-right: 5px;
+    }
+    .selected {
+      font-weight: bold;
+    }
+    .batch-btn {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Student Attendance Tracker</h2>
+
+    <div class="mb-4 text-center">
+      <button class="btn btn-outline-primary batch-btn" onclick="loadBatch('A')">Batch A (101–200)</button>
+      <button class="btn btn-outline-secondary batch-btn" onclick="loadBatch('B')">Batch B (201–280)</button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Attendance</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+
+    <div class="my-3">
+      <button class="btn btn-success me-2" onclick="markAllPresent()">Mark All Present</button>
+      <button class="btn btn-warning me-2" onclick="resetAttendance()">Reset Attendance</button>
+      <button class="btn btn-primary" onclick="showAbsent()">Show Absent Roll Numbers</button>
+      <button class="btn btn-info mt-2" onclick="showTotalPresent()">Show Total Present Students</button>
+      <div id="presentCount" class="mt-2"></div>
+
+    </div>
+
+    <h4 class="mt-4">Absent Roll Numbers:</h4>
+    <div id="absentList" class="mt-2"></div>
+  </div>
+
+  <script>
+    
+    const studentsA = [
+  {
+    "rollno": 101,
+    "name": "Jiya Kyada"
+  },
+  {
+    "rollno": 102,
+    "name": "Shah Dhvani Hitesh"
+  },
+  {
+    "rollno": 103,
+    "name": "Saraya Mohit Haresh"
+  },
+  {
+    "rollno": 104,
+    "name": "Zalavadiya Heet Siddharth"
+  },
+  {
+    "rollno": 105,
+    "name": "Darshil Dobariya"
+  },
+  {
+    "rollno": 106,
+    "name": "Nafisa Gandhi"
+  },
+  {
+    "rollno": 107,
+    "name": "Vasani Yashvi Niteshbhai"
+  },
+  {
+    "rollno": 108,
+    "name": "Delvadiya Manavkumar Kirtibhai"
+  },
+  {
+    "rollno": 109,
+    "name": "Ashara Palak Gopalbhai"
+  },
+  {
+    "rollno": 110,
+    "name": "Lunagariya Greshi Kamleshbhai"
+  },
+  {
+    "rollno": 111,
+    "name": "Nanavati Shrushti Gargesh"
+  },
+  {
+    "rollno": 112,
+    "name": "Ranpara Jay Manishbhai"
+  },
+  {
+    "rollno": 113,
+    "name": "Disha Mehta"
+  },
+  {
+    "rollno": 114,
+    "name": "Thummar Niraj Bhaveshbhai"
+  },
+  {
+    "rollno": 115,
+    "name": "Kachhava Nakul Umeshbhai"
+  },
+  {
+    "rollno": 116,
+    "name": "Kanabar Urva Darshanbhai"
+  },
+  {
+    "rollno": 117,
+    "name": "Nakar Dhruvil Hitesh"
+  },
+  {
+    "rollno": 118,
+    "name": "Poshiya Priyanshi Ajaybhai"
+  },
+  {
+    "rollno": 119,
+    "name": "Baravalia Dharitri Manharbhai"
+  },
+  {
+    "rollno": 120,
+    "name": "Muchhara Kashish Hiteshbhai"
+  },
+  {
+    "rollno": 121,
+    "name": "Chauhan Aditya Sureshbhai"
+  },
+  {
+    "rollno": 122,
+    "name": "Harsora Sakshi Ajaybhai"
+  },
+  {
+    "rollno": 123,
+    "name": "Katrodiya Sahil Rajeshbhai"
+  },
+  {
+    "rollno": 124,
+    "name": "Trambadiya Parikshit Parimalbhai"
+  },
+  {
+    "rollno": 125,
+    "name": "Padariya Preya Parasbhai"
+  },
+  {
+    "rollno": 126,
+    "name": "Gambhava Krushiben Manojbhai"
+  },
+  {
+    "rollno": 127,
+    "name": "Jadeja Vishwrajsinh Krushnasinh"
+  },
+  {
+    "rollno": 128,
+    "name": "Patel Jiya Sandipbhai"
+  },
+  {
+    "rollno": 129,
+    "name": "Pipalava Smit Ashvinbhai"
+  },
+  {
+    "rollno": 130,
+    "name": "Gohil Harshrajsinh Jitendrasinh"
+  },
+  {
+    "rollno": 131,
+    "name": "Kathiriya Arshi Keshubhai"
+  },
+  {
+    "rollno": 132,
+    "name": "Undhad Vishwa Rajesh"
+  },
+  {
+    "rollno": 133,
+    "name": "Diya Raiyani"
+  },
+  {
+    "rollno": 134,
+    "name": "Chavda Maulik Vinodbhai"
+  },
+  {
+    "rollno": 135,
+    "name": "Chavda Priyanka Prabodhbhai"
+  },
+  {
+    "rollno": 136,
+    "name": "Chavda Virendrasinh Ashwinbhai"
+  },
+  {
+    "rollno": 137,
+    "name": "Galani Krunal Chetanbhai"
+  },
+  {
+    "rollno": 138,
+    "name": "Kavar Suchi Vasantbhai"
+  },
+  {
+    "rollno": 139,
+    "name": "Odedara Nilesh Parbat"
+  },
+  {
+    "rollno": 140,
+    "name": "Vasani Dishita Nikhilkumar"
+  },
+  {
+    "rollno": 141,
+    "name": "Vachhani Vaishvi Manojkumar"
+  },
+  {
+    "rollno": 142,
+    "name": "Bhadania Ronit Yatinbhai"
+  },
+  {
+    "rollno": 143,
+    "name": "Chauhan Jenil Virenbhai"
+  },
+  {
+    "rollno": 144,
+    "name": "Virpara Krisha Rajeshbhai"
+  },
+  {
+    "rollno": 145,
+    "name": "Chandra Darshit Hiteshbhai"
+  },
+  {
+    "rollno": 146,
+    "name": "Detroja Ruchit Arvindbhai"
+  },
+  {
+    "rollno": 147,
+    "name": "Kapuriya Hepin Pravinbhai"
+  },
+  {
+    "rollno": 148,
+    "name": "Gohel Smit Ashvinbhai"
+  },
+  {
+    "rollno": 149,
+    "name": "Patel Kirtan Amitbhai"
+  },
+  {
+    "rollno": 150,
+    "name": "Ginoya Deep Kantilal"
+  },
+  {
+    "rollno": 151,
+    "name": "Marvaniya Jainish Dharmendrabhai"
+  },
+  {
+    "rollno": 152,
+    "name": "Ajudiya Yash Nareshbhai"
+  },
+  {
+    "rollno": 153,
+    "name": "Manas Borisagar"
+  },
+  {
+    "rollno": 154,
+    "name": "Joshi Soham Kamleshbhai"
+  },
+  {
+    "rollno": 155,
+    "name": "Kakadiya Khilan Manishbhai"
+  },
+  {
+    "rollno": 156,
+    "name": "Sidhdhapura Dhaval Dharmeshbhai"
+  },
+  {
+    "rollno": 157,
+    "name": "Sitapara Aryan Sunilbhai"
+  },
+  {
+    "rollno": 158,
+    "name": "Bhatasana Nainshi Pareshbhai"
+  },
+  {
+    "rollno": 159,
+    "name": "Malvaniya Viraj Jatinbhai"
+  },
+  {
+    "rollno": 160,
+    "name": "Tanisha Pambhar"
+  },
+  {
+    "rollno": 161,
+    "name": "Padshala Kuldeep Rajendrakumar"
+  },
+  {
+    "rollno": 162,
+    "name": "Bhimani Vishva Manishbhai"
+  },
+  {
+    "rollno": 163,
+    "name": "Karan Anushka Pintubhai"
+  },
+  {
+    "rollno": 164,
+    "name": "Vyas Kavya Sachin"
+  },
+  {
+    "rollno": 165,
+    "name": "Kamani Purna Hareshbhai"
+  },
+  {
+    "rollno": 166,
+    "name": "Mori Nandita Renishkumar"
+  },
+  {
+    "rollno": 167,
+    "name": "Ratanghayra Pankti Himanshu"
+  },
+  {
+    "rollno": 168,
+    "name": "Rupala Nikhil Kashmeeraben"
+  },
+  {
+    "rollno": 169,
+    "name": "Jadeja Shivrajsinh Girirajsinh"
+  },
+  {
+    "rollno": 170,
+    "name": "Hirva Satani"
+  },
+  {
+    "rollno": 171,
+    "name": "Raiyani Jenil Sanjaybhai"
+  },
+  {
+    "rollno": 172,
+    "name": "Chandpa Prince Sureshbhai"
+  },
+  {
+    "rollno": 173,
+    "name": "Faldu Vrajesh Sanjaybhai"
+  },
+  {
+    "rollno": 174,
+    "name": "Khambholiya Manya Parasharbhai"
+  },
+  {
+    "rollno": 175,
+    "name": "Prajapati Kaivalya Samir"
+  },
+  {
+    "rollno": 176,
+    "name": "Moral Aadit Shaileshbhai"
+  },
+  {
+    "rollno": 177,
+    "name": "Shihora Vibhu Chetanbhai"
+  },
+  {
+    "rollno": 178,
+    "name": "Kanani Kruti Jayeshbhai"
+  },
+  {
+    "rollno": 179,
+    "name": "Karoliya Princekumar Sandipbhai"
+  },
+  {
+    "rollno": 180,
+    "name": "Khunt Rutvi Hiteshbhai"
+  },
+  {
+    "rollno": 181,
+    "name": "Charadva Abhishek Virenbhai"
+  },
+  {
+    "rollno": 182,
+    "name": "Dave Krisha Kalpeshbhai"
+  },
+  {
+    "rollno": 183,
+    "name": "Janvi Kalaria"
+  },
+  {
+    "rollno": 184,
+    "name": "Rajwani Rohan Malik"
+  },
+  {
+    "rollno": 185,
+    "name": "Rana Parthrajsinh Bhupatsinh"
+  },
+  {
+    "rollno": 186,
+    "name": "Solanki Ronak Arvindbhai"
+  },
+  {
+    "rollno": 187,
+    "name": "Panchal Vedantkumar Niravbhai"
+  },
+  {
+    "rollno": 188,
+    "name": "Ambasana Venisha Hitenbhai"
+  },
+  {
+    "rollno": 189,
+    "name": "Raichura Smeet Rohitkumar"
+  },
+  {
+    "rollno": 190,
+    "name": "Gambhava Mirali Sureshbhai"
+  },
+  {
+    "rollno": 191,
+    "name": "Dave Dhruv Viralkumar"
+  },
+  {
+    "rollno": 192,
+    "name": "Ghetiya Ritu Pankajbhai"
+  },
+  {
+    "rollno": 193,
+    "name": "Radhanpara Saumya Jatinbhai"
+  },
+  {
+    "rollno": 194,
+    "name": "Yadav Gaurav Kaushikbhai"
+  },
+  {
+    "rollno": 195,
+    "name": "Buddhadev Misri Sanjaybhai"
+  },
+  {
+    "rollno": 196,
+    "name": "Joshi Kairav Paren"
+  },
+  {
+    "rollno": 197,
+    "name": "Savaliya Dhruvi Bharatbhai"
+  },
+  {
+    "rollno": 198,
+    "name": "Radhanpura Jeel Nimish"
+  },
+  {
+    "rollno": 199,
+    "name": "Savaliya Priyanshi Sureshbhai"
+  },
+  {
+    "rollno": 200,
+    "name": "Zala Bhavyadeepsinh Pruthvirajsinh"
+  },
+];
+
+    const studentsB = [
+    {
+    "rollno": 201,
+    "name": "Sinha Milankumar Sujitkumar"
+  },
+  {
+    "rollno": 202,
+    "name": "Lakhtaria Kevin Homin"
+  },
+  {
+    "rollno": 203,
+    "name": "Moliya Kartavya Bhaveshbhai"
+  },
+  {
+    "rollno": 204,
+    "name": "Monpara Nij Hareshbhai"
+  },
+  {
+    "rollno": 205,
+    "name": "Divya Thakar"
+  },
+  {
+    "rollno": 206,
+    "name": "Mendapara Piyu Amishbhai"
+  },
+  {
+    "rollno": 207,
+    "name": "Pandya Karan Tusharbhai"
+  },
+  {
+    "rollno": 208,
+    "name": "Raval Meet Mohitkumar"
+  },
+  {
+    "rollno": 209,
+    "name": "Virpariya Heer Manishbhai"
+  },
+  {
+    "rollno": 210,
+    "name": "Bhanushali Hiral Bhaven"
+  },
+  {
+    "rollno": 211,
+    "name": "Kamaliya Akashkumar Rameshbhai"
+  },
+  {
+    "rollno": 212,
+    "name": "Popat Honey Nileshbhai"
+  },
+  {
+    "rollno": 213,
+    "name": "Badrakiya Meet Bharatbhai"
+  },
+  {
+    "rollno": 214,
+    "name": "Kanani Kavit Nareshbhai"
+  },
+  {
+    "rollno": 215,
+    "name": "Ambaliya Manan Jayeshbhai"
+  },
+  {
+    "rollno": 216,
+    "name": "Hinsu Umang Bharatbhai"
+  },
+  {
+    "rollno": 217,
+    "name": "Kakaniya Bhavy Niteshbhai"
+  },
+  {
+    "rollno": 218,
+    "name": "Padia Kartik Balkrishna"
+  },
+  {
+    "rollno": 219,
+    "name": "Mankada Hasan Shabbirhusain"
+  },
+  {
+    "rollno": 220,
+    "name": "Mehta Dhairy Kalpeshbhai"
+  },
+  {
+    "rollno": 221,
+    "name": "Mehta Het Lalitkumar"
+  },
+  {
+    "rollno": 222,
+    "name": "Kahan Sanghani"
+  },
+  {
+    "rollno": 223,
+    "name": "Gotani Himesh Sanjaybhai"
+  },
+  {
+    "rollno": 224,
+    "name": "Narola Yash Nileshbhai"
+  },
+  {
+    "rollno": 225,
+    "name": "Targata Dharmishtha Arjanbhai"
+  },
+  {
+    "rollno": 226,
+    "name": "Bhuva Tirth Shaileshbhai"
+  },
+  {
+    "rollno": 227,
+    "name": "Jadeja Yashraj Lakhdhirsinh"
+  },
+  {
+    "rollno": 228,
+    "name": "Krisha Pujara"
+  },
+  {
+    "rollno": 229,
+    "name": "Varsani Ritul Hirji"
+  },
+  {
+    "rollno": 230,
+    "name": "Parmar Dhyey Dharmendra"
+  },
+  {
+    "rollno": 231,
+    "name": "Shingala Mansi Rajeshbhai"
+  },
+  {
+    "rollno": 232,
+    "name": "Dobariya Jeel Upendrabhai"
+  },
+  {
+    "rollno": 233,
+    "name": "Khant Mannkumar Jigneshbhai"
+  },
+  {
+    "rollno": 234,
+    "name": "Yadav Neel Hiteshbhai"
+  },
+  {
+    "rollno": 235,
+    "name": "Andodariya Yash Maheshbhai"
+  },
+  {
+    "rollno": 236,
+    "name": "Hirani Jeelkumar Sanjaybhai"
+  },
+  {
+    "rollno": 237,
+    "name": "Mankad Shyamsundar Mitbhai"
+  },
+  {
+    "rollno": 238,
+    "name": "Agavan Rohan Farukbhai"
+  },
+  {
+    "rollno": 239,
+    "name": "Bhadja Zeel Satishkumar"
+  },
+  {
+    "rollno": 240,
+    "name": "Shreya Vijaybhai Bhundia"
+  },
+  {
+    "rollno": 241,
+    "name": "Aghara Keyur Hiteshbhai"
+  },
+  {
+    "rollno": 242,
+    "name": "Buddhadev Deep Nitinbhai"
+  },
+  {
+    "rollno": 243,
+    "name": "Godham Meet Maheshbhai"
+  },
+  {
+    "rollno": 244,
+    "name": "Katariya Trisha Ashvinbhai"
+  },
+  {
+    "rollno": 245,
+    "name": "Vekariya Jay Bipinbhai"
+  },
+  {
+    "rollno": 246,
+    "name": "Rutvi Gautami"
+  },
+  {
+    "rollno": 247,
+    "name": "Sankaliya Aryan Ashokbhai"
+  },
+  {
+    "rollno": 248,
+    "name": "Ghadiya Yashvi Sanjaybhai"
+  },
+  {
+    "rollno": 249,
+    "name": "Ved Chatvani"
+  },
+  {
+    "rollno": 250,
+    "name": "Ghorai Swati Sanjib"
+  },
+  {
+    "rollno": 251,
+    "name": "Karena Radhika Bharatbhai"
+  },
+  {
+    "rollno": 252,
+    "name": "Pandya Kruti Tusharbhai"
+  },
+  {
+    "rollno": 253,
+    "name": "Patel Tejkumar Niteshbhai"
+  },
+  {
+    "rollno": 254,
+    "name": "Sagpariya Mahee Nitinbhai"
+  },
+  {
+    "rollno": 255,
+    "name": "Sherasiya Shyam Sureshbhai"
+  },
+  {
+    "rollno": 256,
+    "name": "Liya Hirvita Rajendra"
+  },
+  {
+    "rollno": 257,
+    "name": "Ahir Krishna Manishbhai"
+  },
+  {
+    "rollno": 258,
+    "name": "Parmar Devanshu Gopalbhai"
+  },
+  {
+    "rollno": 259,
+    "name": "Tivari Astha Sureshbhai"
+  },
+  {
+    "rollno": 260,
+    "name": "Pal Kana Odedra"
+  },
+  {
+    "rollno": 261,
+    "name": "Sorathiya Nabhag Sanjaybhai"
+  },
+  {
+    "rollno": 262,
+    "name": "Chauhan Vishal Girishbhai"
+  },
+  {
+    "rollno": 263,
+    "name": "Kuchhadiya Vanita Bhima"
+  },
+  {
+    "rollno": 264,
+    "name": "Bhimani Naman Chiragbhai"
+  },
+  {
+    "rollno": 265,
+    "name": "Diyora Miraj Bhaveshbhai"
+  },
+  {
+    "rollno": 266,
+    "name": "Gajera Rakshit Ketanbhai"
+  },
+  {
+    "rollno": 267,
+    "name": "Parmar Darpan Jitendra"
+  },
+  {
+    "rollno": 268,
+    "name": "Trivedi Manan Vijaykumar"
+  },
+  {
+    "rollno": 269,
+    "name": "Dave Maharshi Kirtikumar"
+  },
+  {
+    "rollno": 270,
+    "name": "Param Rameshbhai Kotadiya"
+  },
+  {
+    "rollno": 271,
+    "name": "Patel Archi Pradipbhai"
+  },
+  {
+    "rollno": 272,
+    "name": "Saradhara Yug Vrajbhushanbhai"
+  },
+  {
+    "rollno": 273,
+    "name": "Padhariya Ruturajsinh Sureshbhai"
+  },
+  {
+    "rollno": 274,
+    "name": "Vegad Jenil Ashokbhai"
+  },
+  {
+    "rollno": 275,
+    "name": "Patani Kismatbanu Shahidbhai"
+  },
+  {
+    "rollno": 276,
+    "name": "Savaliya Jinesh Kantilal"
+  },
+  {
+    "rollno": 277,
+    "name": "Tank Darshan Chetanbhai"
+  },
+  {
+    "rollno": 278,
+    "name": "Ghodasara Dev Ketanbhai"
+  },
+  {
+    "rollno": 279,
+    "name": "Pithadiya Yash Devendrabhai"
+  },
+  {
+    "rollno": 280,
+    "name": "Gohel Jenil Amitkumar"
+  }
+    ];
+
+    let students = [];
+    let attendanceRecord = {};
+    let currentBatch = "";
+
+    function loadBatch(batchName) {
+      const table = document.getElementById("studentTable");
+      table.innerHTML = "";
+      document.getElementById("absentList").innerHTML = "";
+
+      if (batchName == "A") {
+        students = studentsA;
+      } else if (batchName === "B") {
+        students = studentsB;
+      }
+
+      currentBatch = batchName;
+      attendanceRecord = {};
+
+      students.forEach(student => {
+        attendanceRecord[student.rollno] = "Present";
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${student.rollno}</td>
+          <td>${student.name}</td>
+          <td>
+            <button id="present-${student.rollno}" class="btn btn-success attendance-btn selected" onclick="markAttendance(${student.rollno}, 'Present')">Present</button>
+            <button id="absent-${student.rollno}" class="btn btn-danger attendance-btn" onclick="markAttendance(${student.rollno}, 'Absent')">Absent</button>
+          </td>
+          <td><span id="status-${student.rollno}">Present</span></td>
+        `;
+        table.appendChild(row);
+      });
+    }
+
+    function markAttendance(roll, status) {
+      attendanceRecord[roll] = status;
+
+      const presentBtn = document.getElementById(`present-${roll}`);
+      const absentBtn = document.getElementById(`absent-${roll}`);
+      const statusSpan = document.getElementById(`status-${roll}`);
+
+      if (status == "Present") {
+        presentBtn.classList.add("selected");
+        absentBtn.classList.remove("selected");
+        statusSpan.textContent = "Present";
+      } else {
+        absentBtn.classList.add("selected");
+        presentBtn.classList.remove("selected");
+        statusSpan.textContent = "Absent";
+      }
+    }
+
+    function markAllPresent() {
+      students.forEach(student => {
+        markAttendance(student.rollno, "Present");
+      });
+    }
+
+    function resetAttendance() {
+      students.forEach(student => {
+        attendanceRecord[student.rollno] = "Present";
+        document.getElementById(`status-${student.rollno}`).textContent = "Present";
+        document.getElementById(`present-${student.rollno}`).classList.add("selected");
+        document.getElementById(`absent-${student.rollno}`).classList.remove("selected");
+      });
+      document.getElementById("absentList").innerHTML = "";
+    }
+
+    function showAbsent() {
+      const absentDiv = document.getElementById("absentList");
+      absentDiv.innerHTML = "";
+
+      const absentRolls = Object.entries(attendanceRecord)
+        .filter(([roll, status]) => status == "Absent")
+        .map(([roll]) => roll);
+
+      if (absentRolls.length == 0) {
+        absentDiv.innerHTML = "<p class='text-success'>All students are present!</p>";
+      } else {
+        absentDiv.innerHTML = `<p><strong>${absentRolls.join(", ")}</strong></p>`;
+      }
+    }
+    
+  function showTotalPresent() {
+    const presentDiv = document.getElementById("presentCount");
+    const presentCount = Object.values(attendanceRecord).filter(status => status == "Present").length;
+  
+    presentDiv.innerHTML = `<p class="text-info fw-bold">Total Present Students : ${presentCount}</p>`;
+  }
+
+  window.onload = () => loadBatch("A");
+  </script>
+</body>
+</html>

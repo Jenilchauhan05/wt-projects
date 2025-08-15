@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To Do List - Console Version</title>
+</head>
+<body>
+  <h1>Open Console (Press F12)</h1>
+
+  <script>
+    let todo = [];
+    let req = prompt("Enter your request: (add, list, delete, quit)");
+
+    while (true) {
+      if (req === "quit") {
+        console.log("🛑 Quitting the app.");
+        break;
+      }
+
+      else if (req === "list") {
+        console.log("📋 Current Todo List:");
+        if (todo.length === 0) {
+          console.log("🔸 No tasks available.");
+        } else {
+          for (let i = 0; i < todo.length; i++) {
+            console.log(`${i} : ${todo[i]}`);
+          }
+        }
+      }
+
+      else if (req === "add") {
+        let task = prompt("Enter the task to add:");
+        todo.push(task);
+        console.log(`✅ Task added: "${task}"`);
+      }
+
+      else if (req === "delete") {
+        let idx = parseInt(prompt("Enter index of task to delete:"));
+        if (!isNaN(idx) && idx >= 0 && idx < todo.length) {
+          let removed = todo.splice(idx, 1);
+          console.log(`❌ Task deleted: "${removed}"`);
+        } else {
+          console.log("⚠️ Invalid index.");
+        }
+      }
+
+      else {
+        console.log("⚠️ Invalid request. Try again (add, list, delete, quit).");
+      }
+
+      req = prompt("Enter your next request:");
+    }
+  </script>
+</body>
+</html>

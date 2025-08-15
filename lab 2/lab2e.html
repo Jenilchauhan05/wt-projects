@@ -1,0 +1,27 @@
+<!--Write a JavaScript to take 2-digit number and then separate these 2 digits, then 
+multiply first digit by itself for second digit times. (For example, 23 should be separated 
+as 2 and 3. 2 should multiply with itself 3 times).-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Power Calculator</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Enter a 2-digit number:"));
+        let ones = a % 10;
+        let tens = Math.floor(a / 10);
+        let ans = 1;
+
+        for (let i = 0; i < ones; i++) {
+            ans *= tens;
+        }
+
+        document.writeln(ans);
+    </script>
+</body>
+</html>
