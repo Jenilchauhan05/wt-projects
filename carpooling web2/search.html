@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Ride</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #F6EFD2;
+    }
+    .imag {
+      text-align: center;
+      margin-top: 75px;
+      margin-bottom: 20px;
+    }
+    .search-form {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+    .foot {
+      margin-top: 25px;
+    }
+    .driver-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .stars {
+      color: gold;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">Carrido</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="home.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link">Search ride</a></li>
+          <li class="nav-item"><a href="offer.html" class="nav-link">Offer ride</a></li>
+          <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Map -->
+  <div class="imag">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIoYzt7q9n5wu60NBr4a6HgONFy5e-feE4LA&s" alt="map">
+  </div>
+  
+  <!-- Search Form -->
+  <div class="container search-form">
+    <h2 class="text-center mb-4">Search for a Ride</h2>
+    <div class="card p-4">
+      <div class="mb-3">
+        <label for="source" class="form-label">Source :</label>
+        <input type="text" class="form-control" id="source" placeholder="Enter Starting Point">
+      </div>
+      
+      <div class="mb-3">
+        <label for="destination" class="form-label">Destination :</label>
+        <input type="text" class="form-control" id="destination" placeholder="Enter Destination">
+      </div>
+      
+      <div class="mb-3">
+        <label for="date" class="form-label">Date :</label>
+        <input type="date" class="form-control" id="date">
+      </div>    
+      <button id="searchBtn" class="btn btn-primary w-100">Search Rides</button>
+    </div>
+  </div>
+
+  <!-- Results Section -->
+  <div class="container my-5" id="results"></div>
+  
+  <!-- Footer -->
+  <footer class="foot bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Carrido. All rights reserved.</p>
+    <h5>Connect With Us</h5>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("searchBtn").addEventListener("click", function() {
+      let source = document.getElementById("source").value.trim();
+      let destination = document.getElementById("destination").value.trim();
+      let date = document.getElementById("date").value.trim();
+      let resultsDiv = document.getElementById("results");
+
+      if(source === "" || destination === "" || date === "") {
+        resultsDiv.innerHTML = `<div class="alert alert-danger">⚠️ Please fill all fields!</div>`;
+        return;
+      }
+
+      // Dummy driver data with ratings
+      let drivers = [
+        {
+          name: "Rajesh Kumar",
+          car: "Hyundai i20",
+          price: "₹12/km",
+          rating: 4,
+          img: "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        {
+          name: "Amit Sharma",
+          car: "Maruti Swift",
+          price: "₹10/km",
+          rating: 5,
+          img: "https://randomuser.me/api/portraits/men/45.jpg"
+        },
+        {
+          name: "Priya Singh",
+          car: "Honda City",
+          price: "₹15/km",
+          rating: 3,
+          img: "https://randomuser.me/api/portraits/women/55.jpg"
+        },
+        {
+          name: "Vikram Patel",
+          car: "Tata Nexon",
+          price: "₹14/km",
+          rating: 4,
+          img: "https://randomuser.me/api/portraits/men/60.jpg"
+        }
+      ];
+
+      let output = `<h3 class="mb-4">Available Rides from <b>${source}</b> to <b>${destination}</b> on <b>${date}</b>:</h3>`;
+      drivers.forEach((d, index) => {
+        output += `
+          <div class="card mb-3 driver-card p-3 shadow-sm">
+            <div class="d-flex align-items-center">
+              <img src="${d.img}" alt="${d.name}">
+              <div class="ms-3 w-100">
+                <h5>${d.name}</h5>
+                <p class="mb-1">Car: ${d.car}</p>
+                <p class="mb-1">Price: ${d.price}</p>
+                <p class="mb-1">⭐ Current Rating: ${d.rating}/5</p>
+
+                <!-- Rating Option -->
+                <div>
+                  <span class="stars" data-driver="${index}" data-value="1">&#9733;</span>
+                  <span class="stars" data-driver="${index}" data-value="2">&#9733;</span>
+                  <span class="stars" data-driver="${index}" data-value="3">&#9733;</span>
+                  <span class="stars" data-driver="${index}" data-value="4">&#9733;</span>
+                  <span class="stars" data-driver="${index}" data-value="5">&#9733;</span>
+                </div>
+                
+                <button class="btn btn-sm btn-success mt-2">Book Now</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      resultsDiv.innerHTML = output;
+
+      // Rating functionality
+      document.querySelectorAll(".stars").forEach(star => {
+        star.addEventListener("click", function() {
+          let driverIndex = this.getAttribute("data-driver");
+          let ratingValue = this.getAttribute("data-value");
+
+          // Highlight stars up to clicked one
+          let starsForDriver = document.querySelectorAll(`.stars[data-driver="${driverIndex}"]`);
+          starsForDriver.forEach(s => s.style.color = "gray");
+          for (let i = 0; i < ratingValue; i++) {
+            starsForDriver[i].style.color = "gold";
+          }
+
+          alert(`You rated ${drivers[driverIndex].name} ${ratingValue} stars!`);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

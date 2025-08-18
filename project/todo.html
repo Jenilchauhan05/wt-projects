@@ -1,55 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>To Do List - Console Version</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Profile – CarPoolHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4e73df;
+      --secondary-color: #2e59d9;
+      --accent-color: #f6c23e;
+      --dark-color: #2c3e50;
+      --light-color: #f8f9fc;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      padding-top: 80px;
+    }
+    
+    /* Navbar (same as homepage) */
+    .navbar {
+      box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      background-color: var(--dark-color) !important;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    /* Profile Card */
+    .profile-card {
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .profile-header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+    
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .profile-body {
+      padding: 2rem;
+    }
+    
+    .stats-item {
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    .stats-item h3 {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    /* Ride History Card */
+    .history-card {
+      border-left: 4px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+    
+    .history-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1.5rem rgba(58, 59, 69, 0.2);
+    }
+    
+    /* Footer (same as homepage) */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Open Console (Press F12)</h1>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top px-4">
+      <div class="container">
+        <a class="navbar-brand" href="demo.html">CarPoolHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="demo.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="ridesearch.html">Ride Search</a></li>
+            <li class="nav-item"><a class="nav-link" href="offerride.html">Offer Ride</a></li>
+            <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+  <main class="container my-5">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="profile-card animate__animated animate__fadeIn">
+          <div class="profile-header">
+            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Profile" class="profile-pic">
+            <h3>John Doe</h3>
+            <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>New York, USA</p>
+          </div>
+          <div class="profile-body">
+            <div class="row text-center mb-4">
+              <div class="col-4 stats-item">
+                <h3>24</h3>
+                <small>Rides Taken</small>
+              </div>
+              <div class="col-4 stats-item">
+                <h3>18</h3>
+                <small>Rides Shared</small>
+              </div>
+              <div class="col-4 stats-item">
+                <h3>4.8</h3>
+                <small>Rating</small>
+              </div>
+            </div>
+            <hr>
+            <h5 class="mb-3"><i class="fas fa-car me-2 text-primary"></i>Vehicle Info</h5>
+            <p><strong>Make:</strong> Toyota</p>
+            <p><strong>Model:</strong> Camry</p>
+            <p><strong>Color:</strong> Blue</p>
+            <p><strong>License:</strong> ABC123</p>
+            <button class="btn btn-primary w-100 mt-3">Edit Profile</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="profile-card animate__animated animate__fadeIn animate__delay-1s">
+          <div class="profile-body">
+            <h4 class="mb-4"><i class="fas fa-history me-2 text-primary"></i>Ride History</h4>
+            
+            <div class="history-card p-3 mb-3">
+              <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                  <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Driver" class="rounded-circle" width="50">
+                </div>
+                <div class="col-md-5">
+                  <p class="mb-1"><strong>Boston to New York</strong></p>
+                  <small class="text-muted">June 15, 2025 • 8:30 AM</small>
+                </div>
+                <div class="col-md-3">
+                  <p class="mb-1 text-primary">$15</p>
+                  <small class="text-muted">2 seats</small>
+                </div>
+                <div class="col-md-2 text-end">
+                  <span class="badge bg-success">Completed</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="history-card p-3 mb-3">
+              <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                  <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Driver" class="rounded-circle" width="50">
+                </div>
+                <div class="col-md-5">
+                  <p class="mb-1"><strong>Chicago to Indianapolis</strong></p>
+                  <small class="text-muted">June 10, 2025 • 7:00 AM</small>
+                </div>
+                <div class="col-md-3">
+                  <p class="mb-1 text-primary">$12</p>
+                  <small class="text-muted">1 seat</small>
+                </div>
+                <div class="col-md-2 text-end">
+                  <span class="badge bg-success">Completed</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="history-card p-3">
+              <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                  <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Driver" class="rounded-circle" width="50">
+                </div>
+                <div class="col-md-5">
+                  <p class="mb-1"><strong>Philadelphia to DC</strong></p>
+                  <small class="text-muted">June 5, 2025 • 9:15 AM</small>
+                </div>
+                <div class="col-md-3">
+                  <p class="mb-1 text-primary">$18</p>
+                  <small class="text-muted">3 seats</small>
+                </div>
+                <div class="col-md-2 text-end">
+                  <span class="badge bg-warning text-dark">Upcoming</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>CarPoolHub</h5>
+          <p>The smart way to commute. Share rides, save money, and reduce your carbon footprint.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="demo.html" class="text-white">Home</a></li>
+            <li><a href="ridesearch.html" class="text-white">Ride Search</a></li>
+            <li><a href="offerride.html" class="text-white">Offer Ride</a></li>
+            <li><a href="profile.html" class="text-white">Profile</a></li>
+            <li><a href="contact.html" class="text-white">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Connect With Us</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4 bg-light">
+      <div class="text-center">
+        <small>&copy; 2025 CarPoolHub. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    let todo = [];
-    let req = prompt("Enter your request: (add, list, delete, quit)");
-
-    while (true) {
-      if (req === "quit") {
-        console.log("🛑 Quitting the app.");
-        break;
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
-
-      else if (req === "list") {
-        console.log("📋 Current Todo List:");
-        if (todo.length === 0) {
-          console.log("🔸 No tasks available.");
-        } else {
-          for (let i = 0; i < todo.length; i++) {
-            console.log(`${i} : ${todo[i]}`);
-          }
-        }
-      }
-
-      else if (req === "add") {
-        let task = prompt("Enter the task to add:");
-        todo.push(task);
-        console.log(`✅ Task added: "${task}"`);
-      }
-
-      else if (req === "delete") {
-        let idx = parseInt(prompt("Enter index of task to delete:"));
-        if (!isNaN(idx) && idx >= 0 && idx < todo.length) {
-          let removed = todo.splice(idx, 1);
-          console.log(`❌ Task deleted: "${removed}"`);
-        } else {
-          console.log("⚠️ Invalid index.");
-        }
-      }
-
-      else {
-        console.log("⚠️ Invalid request. Try again (add, list, delete, quit).");
-      }
-
-      req = prompt("Enter your next request:");
-    }
+    });
   </script>
 </body>
 </html>
