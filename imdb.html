@@ -190,6 +190,200 @@
             font-size: 0.85rem;
             font-weight: bold;
         }
+        
+        .celebrity-card {
+            background-color: var(--imdb-dark-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            height: 100%;
+        }
+
+        .celebrity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(245, 197, 24, 0.3);
+        }
+
+        .celebrity-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            padding: 1rem;
+        }
+
+        .celebrity-info {
+            padding: 0 1rem 1rem 1rem;
+        }
+
+        .celebrity-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--imdb-white);
+            margin-bottom: 0.3rem;
+        }
+
+        .celebrity-role {
+            color: var(--imdb-light-gray);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .celebrity-known {
+            font-size: 0.7rem;
+            color: var(--imdb-light-gray);
+        }
+        
+        .top10-card {
+            position: relative;
+            background-color: var(--imdb-dark-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+            height: 100%;
+        }
+        
+        .top10-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(245, 197, 24, 0.3);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--imdb-yellow);
+            color: var(--imdb-black);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            z-index: 2;
+        }
+
+        .trending-badge {
+            background-color: #e50914;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        
+        * Fan Favourites Styling */
+        .fan-badge {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Streaming Platform Styling */
+        .streaming-tabs {
+            justify-content: center;
+        }
+
+        .streaming-tab {
+            background-color: var(--imdb-gray) !important;
+            color: var(--imdb-white) !important;
+            border: none !important;
+            margin: 0 0.5rem;
+            border-radius: 25px !important;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .streaming-tab.active {
+            background-color: var(--imdb-yellow) !important;
+            color: var(--imdb-black) !important;
+        }
+
+        .streaming-card {
+            position: relative;
+            background-color: var(--imdb-dark-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+            height: 100%;
+        }
+
+        .streaming-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .prime-badge {
+            background-color: #00a8e1;
+            color: white;
+        }
+
+        .netflix-badge {
+            background-color: #e50914;
+            color: white;
+        }
+
+        .jio-badge {
+            background-color: #8a2be2;
+            color: white;
+        }
+
+        .mx-badge {
+            background-color: #ff6600;
+            color: white;
+        }
+
+        .sony-badge {
+            background-color: #0060a9;
+            color: white;
+        }
+
+        /* Theater Styling */
+        .theater-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .theater-btn {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .theater-btn:hover {
+            background-color: #218838;
+            color: white;
+        }
 
         .footer-custom {
             background-color: var(--imdb-dark-gray);
@@ -361,7 +555,7 @@
                         </div>
                         
                         <div class="carousel-item">
-                            <img src="data:image/webp;base64,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" 
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.NN9rKH-vZbFgtH4FuoW7OwHaLH?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3" 
                                  class="d-block w-100" alt="Featured Movie 2">
                             <div class="carousel-caption">
                                 <h3>The Dark Knight</h3>
@@ -406,7 +600,7 @@
         <section class="popular-movies">
             <div class="container">
                 <h2 class="section-title">
-                    <i class="fas fa-fire me-2"></i> Popular Movies
+                    <i class="fas fa-fire me-2"></i> Top Picks
                 </h2>
                 
                 <div class="row">
@@ -559,7 +753,7 @@
                     
                     <div class="col-lg-2 col-md-4 col-sm-6 col-6">
                         <div class="movie-card">
-                            <img src="data:image/webp;base64,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" 
+                            <img src="https://thvnext.bing.com/th/id/OIP.OmlMZyN4lkI12AR2_a8ZIwHaNK?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3"
                                  alt="Stranger Things" class="card-img-top">
                             <div class="movie-card-body">
                                 <h5 class="movie-title">Stranger Things</h5>
@@ -610,7 +804,7 @@
 
                     <div class="col-lg-2 col-md-4 col-sm-6 col-6">
                         <div class="movie-card">
-                            <img src="data:image/webp;base64,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" 
+                            <img src="https://wallpapercave.com/wp/wp8056392.jpg" 
                                  alt="The Office" class="card-img-top">
                             <div class="movie-card-body">
                                 <h5 class="movie-title">Scam 1992</h5>
@@ -620,6 +814,893 @@
                                 </span>
                                 <button class="watchlist-btn w-100">
                                     <i class="fas fa-plus me-1"></i> Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Most Popular Celebrities Section -->
+        <section class="celebrities">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-users me-2"></i> Most Popular Celebrities
+                </h2>
+                <div class="row">
+          
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="celebrity-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.g28WQU4IJUB27rcYyO6hMQHaEK?w=311&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                alt="Robert Downey Jr." class="celebrity-img">
+                            <div class="celebrity-info">
+                                <h5 class="celebrity-name">Robert Downey Jr.</h5>
+                                <p class="celebrity-role">Actor, Producer</p>
+                                <div class="celebrity-known">
+                                    Known for: Iron Man, Sherlock Holmes
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="celebrity-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.GrmTzANLTA9TtHstXAVsigHaHa?w=176&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Margot Robbie" class="celebrity-img">
+                            <div class="celebrity-info">
+                                <h5 class="celebrity-name">Sydney Sweeney</h5>
+                                <p class="celebrity-role">Actress, Producer</p>
+                                <div class="celebrity-known">
+                                    Known for: Euphoria, The White Lotus
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="celebrity-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.Tv6G5mC0Q81b6A9ozO0F8AHaE6?w=290&h=192&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Ryan Gosling" class="celebrity-img">
+                            <div class="celebrity-info">
+                                <h5 class="celebrity-name">Ryan Gosling</h5>
+                                <p class="celebrity-role">Actor, Musician</p>
+                                <div class="celebrity-known">
+                                    Known for: La La Land, Drive
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="celebrity-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.4aTjcP9IvWla7qOdYT-8RgHaJQ?w=184&h=230&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Emma Stone" class="celebrity-img">
+                            <div class="celebrity-info">
+                                <h5 class="celebrity-name">Shraddha Kapoor</h5>
+                                <p class="celebrity-role">Actress, Singer</p>
+                                <div class="celebrity-known">
+                                    Known for: Chhichhore, Haider
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="celebrity-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.E7ckmndaVeOFO2r0rfGpJAHaEK?w=328&h=184&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Timothée Chalamet" class="celebrity-img">
+                            <div class="celebrity-info">
+                                <h5 class="celebrity-name">Tom Cruis</h5>
+                                <p class="celebrity-role">Actor, Producer</p>
+                                <div class="celebrity-known">
+                                    Known for: Mission Impossible, Top Gun
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="celebrity-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.cjAEFkL10rpCKcSsiISLKAHaNK?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Zendaya" class="celebrity-img">
+                            <div class="celebrity-info">
+                                <h5 class="celebrity-name">Akshay Kumar</h5>
+                                <p class="celebrity-role">Actor, Producer</p>
+                                <div class="celebrity-known">
+                                    Known for: Hera Pheri, OMG
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Top 10 on IMDb This Week -->
+        <section class="top-10-week">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-trophy me-2"></i> Top 10 on IMDb This Week
+                </h2>
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="top10-card">
+                            <div class="rank-badge">1</div>
+                            <img src="https://thvnext.bing.com/th/id/OIP.MUVEhnwReJ7ArGtzqQddcgHaK-?w=123&h=183&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Deadpool & Wolverine" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Peacemaker</h5>
+                                <p class="movie-year">2022</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.3
+                                </span>
+                                <div class="trending-badge">
+                                    <i class="fas fa-trending-up me-1"></i> Trending
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="top10-card">
+                            <div class="rank-badge">2</div>
+                            <img src="https://thvnext.bing.com/th/id/OIP.WXFyLaoxXUIPuH4PnHKB3AHaK5?w=130&h=150&c=6&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Inside Out 2" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">The Terminal List : Dark Wolf</h5>
+                                <p class="movie-year">2025</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.0
+                                </span>
+                                <div class="trending-badge">
+                                    <i class="fas fa-trending-up me-1"></i> Trending
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="top10-card">
+                            <div class="rank-badge">3</div>
+                            <img src="https://thvnext.bing.com/th/id/OIP.Iw6Vbpd0tN7cfYkBt4srhgHaHa?w=180&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="A Quiet Place: Day One" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Wednesday</h5>
+                                <p class="movie-year">2022</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.0
+                                </span>
+                                <div class="trending-badge">
+                                    <i class="fas fa-trending-up me-1"></i> Trending
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="top10-card">
+                            <div class="rank-badge">4</div>
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTQ3YmQ4YzMtOTkyZC00YmM5LThhZjEtM2E0MjFkNTc0OGJhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
+                                 alt="Bad Boys: Ride or Die" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Dexter : Resurrection</h5>
+                                <p class="movie-year">2025</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 9.2
+                                </span>
+                                <div class="trending-badge">
+                                    <i class="fas fa-trending-up me-1"></i> Trending
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="top10-card">
+                            <div class="rank-badge">5</div>
+                            <img src="https://thvnext.bing.com/th/id/OIP.0zJKpFCcKwLmiQXYuFgquQHaJQ?w=145&h=182&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Twisters" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Alien : Earth</h5>
+                                <p class="movie-year">2025</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.6
+                                </span>
+                                <div class="trending-badge">
+                                    <i class="fas fa-trending-up me-1"></i> Trending
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="top10-card">
+                            <div class="rank-badge">6</div>
+                            <img src="https://thvnext.bing.com/th/id/OIP.w9_KAMPwtT_YUo9WmbqktQHaK9?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Longlegs" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Weapons</h5>
+                                <p class="movie-year">2025</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.8
+                                </span>
+                                <div class="trending-badge">
+                                    <i class="fas fa-trending-up me-1"></i> Trending
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Fan Favourites Section -->
+        <section class="fan-favourites">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-heart me-2"></i> Fan Favourites
+                </h2>
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card fan-card">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.mUrPwO94BbkhpksOcMmqGgHaLH?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                                 alt="The Shawshank Redemption" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">The Shawshank Redemption</h5>
+                                <p class="movie-year">1994</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 9.3
+                                </span>
+                                <div class="fan-badge">
+                                    <i class="fas fa-heart me-1"></i> Fan Favourite
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card fan-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.EZncYnNoDxdf2bBsnDbQigHaKg?w=137&h=194&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="The Godfather" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">The Godfather</h5>
+                                <p class="movie-year">1972</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 9.2
+                                </span>
+                                <div class="fan-badge">
+                                    <i class="fas fa-heart me-1"></i> Fan Favourite
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card fan-card">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.NN9rKH-vZbFgtH4FuoW7OwHaLH?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                                 alt="The Dark Knight" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">The Dark Knight</h5>
+                                <p class="movie-year">2008</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 9.0
+                                </span>
+                                <div class="fan-badge">
+                                    <i class="fas fa-heart me-1"></i> Fan Favourite
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card fan-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.JzYnwQk_OqfqTGUl5ZUTsgHaLH?w=184&h=276&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Pulp Fiction" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Pulp Fiction</h5>
+                                <p class="movie-year">1994</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.9
+                                </span>
+                                <div class="fan-badge">
+                                    <i class="fas fa-heart me-1"></i> Fan Favourite
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card fan-card">
+                            <img src="https://thvnext.bing.com/th/id/OIP.Q8uXsPAH1CTHH4WKzgq6iQHaKp?w=121&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                 alt="Forrest Gump" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Forrest Gump</h5>
+                                <p class="movie-year">1994</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.8
+                                </span>
+                                <div class="fan-badge">
+                                    <i class="fas fa-heart me-1"></i> Fan Favourite
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card fan-card">
+                            <img src="https://th.bing.com/th/id/OIP.asgzvFKYUGe5x_vM49WGxwHaEK?w=333&h=187&c=7&r=0&o=7&pid=1.7&rm=3" 
+                                 alt="Inception" class="card-img-top">
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Inception</h5>
+                                <p class="movie-year">2010</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.8
+                                </span>
+                                <div class="fan-badge">
+                                    <i class="fas fa-heart me-1"></i> Fan Favourite
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Explore What's Streaming Section -->
+        <section class="streaming-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-play-circle me-2"></i> Explore What's Streaming
+                </h2>
+                
+                <!-- Streaming Platform Tabs -->
+                <ul class="nav nav-pills streaming-tabs mb-4" id="streaming-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active streaming-tab" id="prime-tab" data-bs-toggle="pill" data-bs-target="#prime-content" type="button">
+                            <i class="fab fa-amazon me-2"></i> Prime Video
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link streaming-tab" id="netflix-tab" data-bs-toggle="pill" data-bs-target="#netflix-content" type="button">
+                            <i class="fas fa-film me-2"></i> Netflix
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link streaming-tab" id="hotstar-tab" data-bs-toggle="pill" data-bs-target="#hotstar-content" type="button">
+                            <i class="fas fa-star me-2"></i> JioCinema
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link streaming-tab" id="mx-tab" data-bs-toggle="pill" data-bs-target="#mx-content" type="button">
+                            <i class="fas fa-video me-2"></i> MX Player
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link streaming-tab" id="sony-tab" data-bs-toggle="pill" data-bs-target="#sony-content" type="button">
+                            <i class="fas fa-tv me-2"></i> SonyLIV
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="streaming-content">
+
+                    <!-- Netflix Content -->
+                    <div class="tab-pane fade" id="netflix-content" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.OmlMZyN4lkI12AR2_a8ZIwHaNK?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Stranger Things" class="card-img-top">
+                                    <div class="streaming-badge netflix-badge">Netflix</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Stranger Things</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.7
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.rrfi958t9BAAt-oC_sBl-gHaK-?w=121&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="The Crown" class="card-img-top">
+                                    <div class="streaming-badge netflix-badge">Netflix</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">The Crown</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.6
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.Iw6Vbpd0tN7cfYkBt4srhgHaHa?w=180&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Wednesday" class="card-img-top">
+                                    <div class="streaming-badge netflix-badge">Netflix</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Wednesday</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.1
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.D4d76RNSVVnHQEWxGpBFYwHaJ4?w=135&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Money Heist" class="card-img-top">
+                                    <div class="streaming-badge netflix-badge">Netflix</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Money Heist</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.2
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.5GXMWzjvja13qo-QnUkzHwHaK-?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="The Witcher" class="card-img-top">
+                                    <div class="streaming-badge netflix-badge">Netflix</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">The Witcher</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.0
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.uoVSD4-IQJ3tlB4rEgHQYQHaK-?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Squid Game" class="card-img-top">
+                                    <div class="streaming-badge netflix-badge">Netflix</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Squid Game</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.0
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JioCinema Content -->
+                    <div class="tab-pane fade" id="hotstar-content" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://tse2.mm.bing.net/th/id/OIP.0fDNkmvdGiA5_oN1SzbjegHaEK?cb=ucfimgc2&pid=ImgDet&w=191&h=107&c=7&o=7&rm=3" 
+                                         alt="Bigg Boss" class="card-img-top">
+                                    <div class="streaming-badge jio-badge">JioCinema</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Bigg Boss</h5>
+                                        <p class="movie-year">Reality Show</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 7.2
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.biCWi6_f4eWl8QvHOwmuBQHaJQ?w=138&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Koffee with Karan" class="card-img-top">
+                                    <div class="streaming-badge jio-badge">JioCinema</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Koffee with Karan</h5>
+                                        <p class="movie-year">Talk Show</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 6.8
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://cf-images.eu-west-1.prod.boltdns.net/v1/static/3588749423001/67351d5a-b913-4b49-bb2c-5ab12aa79722/b7ed3571-f518-4946-b610-70b1ee573b0e/1280x720/match/image.jpg" 
+                                         alt="IPL Matches" class="card-img-top">
+                                    <div class="streaming-badge jio-badge">JioCinema</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">IPL</h5>
+                                        <p class="movie-year">Sports</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.5
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.C6B5wvnv0d_V6oxMl3xnBwHaEK?w=318&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="The Family Man" class="card-img-top">
+                                    <div class="streaming-badge jio-badge">JioCinema</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">WWE Raw</h5>
+                                        <p class="movie-year">Sports Entertainment</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 7.8
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://tse2.mm.bing.net/th/id/OIP.Vg0MHaraIkc8pxxlpderrAHaHa?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                                         alt="Roadies" class="card-img-top">
+                                    <div class="streaming-badge jio-badge">JioCinema</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Roadies</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 7.3
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.NqZKQIMLQNgEZhUYJnp4vAHaEO?w=285&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Splitsvilla" class="card-img-top">
+                                    <div class="streaming-badge jio-badge">JioCinema</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Chernobyl</h5>
+                                        <p class="movie-year">TV Mini Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 9.3
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MX Player Content -->
+                    <div class="tab-pane fade" id="mx-content" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://tse1.explicit.bing.net/th/id/OIP.dipHtidF6e6ems6Uo0dHIQHaEK?cb=ucfimgc2&pid=ImgDet&w=191&h=107&c=7&o=7&rm=3" 
+                                         alt="Aashram" class="card-img-top">
+                                    <div class="streaming-badge mx-badge">MX Player</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Aashram</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.1
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://wallpapercave.com/wp/wp8056392.jpg" 
+                                         alt="Scam 1992" class="card-img-top">
+                                    <div class="streaming-badge mx-badge">MX Player</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Scam 1992</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 9.5
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://timesofindia.indiatimes.com/photo.cms?msid=89178481&resizemode=4" 
+                                         alt="The Great Indian Murder" class="card-img-top">
+                                    <div class="streaming-badge mx-badge">MX Player</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">The Great Indian Murder</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 7.4
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.YlFnGyiN0g8XaDaF5FOKzAHaL0?w=115&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Campus Diaries" class="card-img-top">
+                                    <div class="streaming-badge mx-badge">MX Player</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Campus Diaries</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 7.8
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://www.wikibiodata.com/wp-content/uploads/2021/04/Hello-Mini-Season-3.jpg" 
+                                         alt="Hello Mini" class="card-img-top">
+                                    <div class="streaming-badge mx-badge">MX Player</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Hello Mini</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 6.9
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.X76um2ri6h_D0nItYX-ZXAHaEK?w=324&h=182&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Matsya Kaand" class="card-img-top">
+                                    <div class="streaming-badge mx-badge">MX Player</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Matsya Kaand</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.2
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SonyLIV Content -->
+                    <div class="tab-pane fade" id="sony-content" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://tse4.mm.bing.net/th/id/OIP.HRXyCRr7vqY7CawINaSjbAHaKX?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                                         alt="Scam 2003" class="card-img-top">
+                                    <div class="streaming-badge sony-badge">SonyLIV</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Scam 2003</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.8
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.Fgc9yALek0dmdZvDKHy-aQHaEK?w=251&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Rocket Boys" class="card-img-top">
+                                    <div class="streaming-badge sony-badge">SonyLIV</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Rocket Boys</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.9
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.-tm6gt_3rOMdbXqup3dKGQHaEK?w=274&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Tabbar" class="card-img-top">
+                                    <div class="streaming-badge sony-badge">SonyLIV</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Tabbar</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.4
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://d229kpbsb5jevy.cloudfront.net/sony4/videoasset_images/gullak4_3_landscape_thumb.jpg" 
+                                         alt="Gullak" class="card-img-top">
+                                    <div class="streaming-badge sony-badge">SonyLIV</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Gullak</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 9.1
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.vCszBt1Un9PBos6pFxv3hQHaFb?w=274&h=200&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Mumbai Diaries 26/11" class="card-img-top">
+                                    <div class="streaming-badge sony-badge">SonyLIV</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Mumbai Diaries 26/11</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.1
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.IgT7UmshL4bslvrfFEW5mwHaEK?w=286&h=180&c=7&r=0&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="Human" class="card-img-top">
+                                    <div class="streaming-badge sony-badge">SonyLIV</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">Human</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 7.7
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Prime Video Content -->
+                    <div class="tab-pane fade show active" id="prime-content" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                                <div class="streaming-card">
+                                    <img src="https://thvnext.bing.com/th/id/OIP.WXFyLaoxXUIPuH4PnHKB3AHaK5?w=130&h=150&c=6&o=7&cb=ucfimgc2&pid=1.7&rm=3" 
+                                         alt="The Boys" class="card-img-top">
+                                    <div class="streaming-badge prime-badge">Prime</div>
+                                    <div class="movie-card-body">
+                                        <h5 class="movie-title">The Terminal List</h5>
+                                        <p class="movie-year">TV Series</p>
+                                        <span class="movie-rating">
+                                            <i class="fas fa-star"></i> 8.0
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- In Theaters Section -->
+        <section class="in-theaters">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-film me-2"></i> In Theaters
+                </h2>
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card theater-card">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS8xMCAgNC40SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00423690-lvksqhrdgq-portrait.jpg" 
+                                 alt="Oppenheimer" class="card-img-top">
+                            <div class="theater-badge">Now Playing</div>
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">The Bengal Files</h5>
+                                <p class="movie-year">2025 • 3h</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 9
+                                </span>
+                                <button class="theater-btn w-100">
+                                    <i class="fas fa-ticket-alt me-1"></i> Book Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card theater-card">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4zLzEwICA4LjRLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00430860-dqffzcxnxr-portrait.jpg" 
+                                 alt="Barbie" class="card-img-top">
+                            <div class="theater-badge">Now Playing</div>
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Vash : level 2</h5>
+                                <p class="movie-year">2025 • 1h 54m</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.3
+                                </span>
+                                <button class="theater-btn w-100">
+                                    <i class="fas fa-ticket-alt me-1"></i> Book Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card theater-card">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICAxMTIuOEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00456016-vdyyatbyrq-portrait.jpg" 
+                                 alt="Mission Impossible" class="card-img-top">
+                            <div class="theater-badge">Now Playing</div>
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Lokah : chapter 1</h5>
+                                <p class="movie-year">2025 • 2h 43m</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 9.3
+                                </span>
+                                <button class="theater-btn w-100">
+                                    <i class="fas fa-ticket-alt me-1"></i> Book Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card theater-card">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC44LzEwICAyMjAgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00459607-uyskqhtfex-portrait.jpg" 
+                                 alt="Guardians of the Galaxy" class="card-img-top">
+                            <div class="theater-badge">Now Playing</div>
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Dil Madhraasi</h5>
+                                <p class="movie-year">2025 • 2h 30m</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 8.8
+                                </span>
+                                <button class="theater-btn w-100">
+                                    <i class="fas fa-ticket-alt me-1"></i> Book Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card theater-card">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ni41LzEwICAyNC40SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00445371-xaexapcrny-portrait.jpg" 
+                                 alt="The Flash" class="card-img-top">
+                            <div class="theater-badge">Now Playing</div>
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">The Conjuring : Last Rites</h5>
+                                <p class="movie-year">2025 • 2h 24m</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 6.7
+                                </span>
+                                <button class="theater-btn w-100">
+                                    <i class="fas fa-ticket-alt me-1"></i> Book Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                        <div class="movie-card theater-card">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny43LzEwICAxNy4ySyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00420244-fyxzdruzuq-portrait.jpg" 
+                                 alt="Indiana Jones" class="card-img-top">
+                            <div class="theater-badge">Now Playing</div>
+                            <div class="movie-card-body">
+                                <h5 class="movie-title">Baaghi 4</h5>
+                                <p class="movie-year">2025 • 2h 34m</p>
+                                <span class="movie-rating">
+                                    <i class="fas fa-star"></i> 7.7
+                                </span>
+                                <button class="theater-btn w-100">
+                                    <i class="fas fa-ticket-alt me-1"></i> Book Tickets
                                 </button>
                             </div>
                         </div>
@@ -654,13 +1735,13 @@
                     
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="movie-card">
-                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-NSwgU2VwIDIwMjU%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00423690-lvksqhrdgq-portrait.jpg" 
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MjUsIFNlcCAyMDI1,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00369074-svcshbmfxb-portrait.jpg" 
                                  alt="Upcoming Movie 2" class="card-img-top">
                             <div class="movie-card-body">
-                                <h5 class="movie-title">The Bengal Files</h5>
+                                <h5 class="movie-title">They Call Him OG</h5>
                                 <p class="movie-year">2025</p>
+                                <span class="genre-tag">Action</span>
                                 <span class="genre-tag">Drama</span>
-                                <span class="genre-tag">Historical</span>
                                 <button class="watchlist-btn w-100">
                                     <i class="fas fa-plus me-1"></i> Add to Watchlist
                                 </button>
@@ -670,13 +1751,13 @@
                     
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="movie-card">
-                            <img src="data:image/webp;base64,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" 
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-NSwgRGVjIDIwMjU%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00452447-uflwmqubpl-portrait.jpg" 
                                  alt="Upcoming Movie 3" class="card-img-top">
                             <div class="movie-card-body">
-                                <h5 class="movie-title">Conjurig : Last Rites</h5>
+                                <h5 class="movie-title">Dhurandhar</h5>
                                 <p class="movie-year">2025</p>
-                                <span class="genre-tag">Mystory</span>
-                                <span class="genre-tag">Horror</span>
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Thriller</span>
                                 <button class="watchlist-btn w-100">
                                     <i class="fas fa-plus me-1"></i> Add to Watchlist
                                 </button>
@@ -740,7 +1821,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Add hover effects and basic interactivity
         document.addEventListener('DOMContentLoaded', function() {
             // Add click events to movie cards for future functionality
             const movieCards = document.querySelectorAll('.movie-card');
@@ -758,7 +1838,7 @@
                 const query = searchInput.value.trim();
                 if (query) {
                     console.log('Search query:', query);
-                    alert('Search functionality will be implemented in Week 2 with API integration!');
+                    alert('not found');
                 }
             });
             
