@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5c518" />
+    <meta name="description" content="IMDb Clone - Your ultimate destination for movie information, ratings, and reviews" />
+    <meta name="keywords" content="movies, tv shows, imdb, ratings, reviews, cinema" />
+    <meta name="author" content="IMDb Clone" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IMDb Clone - Movie Database" />
+    <meta property="og:description" content="Discover movies, TV shows, and celebrity information" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="IMDb Clone - Movie Database" />
+    <meta property="twitter:description" content="Discover movies, TV shows, and celebrity information" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.jpg" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    
+    <!-- Font Awesome -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer" 
+    />
+    
+    <title>IMDb Clone - Movie Database</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "IMDb Clone",
+      "description": "Movie and TV show database with ratings and reviews",
+      "url": "https://your-domain.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://your-domain.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 20px; background-color: #f5c518; color: #000;">
+        You need to enable JavaScript to run this app.
+      </div>
+    </noscript>
+    <div id="root"></div>
+    
+    <!-- Loading indicator for slow connections -->
+    <div id="initial-loader" style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      color: #f5c518;
+      font-size: 1.5rem;
+      display: none;
+    ">
+      <i class="fas fa-spinner fa-spin"></i> Loading IMDb Clone...
+    </div>
+    
+    <script>
+      // Show loader after 1 second if app hasn't loaded
+      setTimeout(function() {
+        if (!document.querySelector('.App')) {
+          document.getElementById('initial-loader').style.display = 'block';
+        }
+      }, 1000);
+      
+      // Hide loader when app loads
+      window.addEventListener('load', function() {
+        document.getElementById('initial-loader').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
