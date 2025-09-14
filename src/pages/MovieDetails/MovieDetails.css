@@ -1,0 +1,287 @@
+/* Movie Details Page Styles */
+.movie-details-page {
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  }
+  
+  .movie-details-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .movie-hero-section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  
+  .movie-poster-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .movie-poster-large {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(245, 197, 24, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-poster-large:hover {
+    transform: scale(1.02);
+  }
+  
+  .movie-main-info {
+    padding-left: 20px;
+  }
+  
+  .movie-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .movie-title-large {
+    color: #f5c518;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .movie-year-large {
+    color: #cccccc;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  .movie-rating-large {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+  
+  .rating-star-large {
+    color: #f5c518;
+    margin-right: 8px;
+    font-size: 1.5rem;
+  }
+  
+  .rating-value-large {
+    color: #f5c518;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  
+  .rating-text {
+    color: #cccccc;
+    margin-left: 3px;
+  }
+  
+  .movie-genres {
+    margin-bottom: 25px;
+  }
+  
+  .genre-badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .movie-meta-info {
+    margin-bottom: 30px;
+  }
+  
+  .meta-item {
+    margin-bottom: 8px;
+    color: #cccccc;
+    font-size: 1rem;
+  }
+  
+  .meta-item strong {
+    color: #f5c518;
+    margin-right: 10px;
+  }
+  
+  .movie-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .movie-actions .btn {
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .movie-actions .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Details Section */
+  .movie-details-section {
+    margin-bottom: 40px;
+  }
+  
+  .section-title {
+    color: #f5c518;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f5c518;
+    padding-bottom: 10px;
+  }
+  
+  .plot-section {
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  
+  .plot-description {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  .cast-section {
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  
+  .cast-list {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .cast-member {
+    transition: color 0.3s ease;
+  }
+  
+  .cast-member:hover {
+    color: #f5c518;
+  }
+  
+  .movie-facts-section {
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 10px;
+    height: fit-content;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  
+  .fact-item {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #404040;
+    color: #cccccc;
+  }
+  
+  .fact-item:last-child {
+    border-bottom: none;
+  }
+  
+  .fact-item strong {
+    color: #f5c518;
+    margin-right: 10px;
+  }
+  
+  .back-button-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .back-button-section .btn {
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-button-section .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .movie-details-container {
+      padding: 20px 15px;
+    }
+    
+    .movie-hero-section {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .movie-main-info {
+      padding-left: 0;
+      margin-top: 20px;
+    }
+    
+    .movie-title-large {
+      font-size: 2rem;
+    }
+    
+    .movie-year-large {
+      font-size: 1.2rem;
+    }
+    
+    .movie-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    
+    .movie-actions {
+      flex-direction: column;
+    }
+    
+    .movie-actions .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .plot-section, .cast-section, .movie-facts-section {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .movie-title-large {
+      font-size: 1.6rem;
+    }
+    
+    .movie-rating-large {
+      font-size: 1.1rem;
+    }
+    
+    .rating-value-large {
+      font-size: 1.2rem;
+    }
+    
+    .section-title {
+      font-size: 1.3rem;
+    }
+    
+    .plot-description {
+      font-size: 1rem;
+    }
+  }s-list {
+    margin-top: 20px;
+  }

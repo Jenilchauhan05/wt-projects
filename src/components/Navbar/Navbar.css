@@ -1,0 +1,97 @@
+/* Custom Navbar Styles */
+.custom-navbar {
+  background-color: #121212 !important;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem 0;
+  z-index: 1030;
+}
+
+.imdb-logo img {
+  filter: brightness(1.2);
+  transition: transform 0.2s ease;
+}
+
+.imdb-logo:hover img {
+  transform: scale(1.05);
+}
+
+.nav-item-custom {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-item-custom:hover {
+  color: #f5c518 !important;
+}
+
+/* Search Form Styles */
+.search-form {
+  min-width: 300px;
+}
+
+.search-input {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  color: #ffffff;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-input:focus {
+  background-color: #2a2a2a;
+  border-color: #f5c518;
+  color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(245, 197, 24, 0.25);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-button {
+  border-radius: 0 4px 4px 0;
+  padding: 0 15px;
+  background-color: #f5c518;
+  border-color: #f5c518;
+  color: #000;
+}
+
+.search-button:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+}
+
+/* Sign In Link */
+.sign-in-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sign-in-link:hover {
+  color: #f5c518 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .search-form {
+    margin: 10px 0;
+    min-width: auto;
+  }
+  
+  .nav-item-custom {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .search-button {
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+}

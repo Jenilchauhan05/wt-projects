@@ -1,0 +1,174 @@
+/* Hero Carousel Styles */
+.hero-carousel-container {
+  width: 100%;
+  margin: 0;
+}
+
+.custom-carousel {
+  height: 60vh;
+  min-height: 400px;
+}
+
+.carousel-item-custom {
+  height: 60vh;
+  min-height: 400px;
+  position: relative;
+}
+
+.carousel-image-container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-content {
+  width: 100%;
+  padding: 0 5%;
+}
+
+.movie-info {
+  max-width: 600px;
+  color: white;
+}
+
+.movie-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.rating-star {
+  color: #f5c518;
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.rating-value {
+  color: #f5c518;
+  font-weight: bold;
+}
+
+.movie-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  max-width: 500px;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.movie-actions .btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.movie-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Carousel Controls Customization */
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  width: 5%;
+  background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+}
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-size: 20px 20px;
+}
+
+/* Carousel Indicators */
+.custom-carousel .carousel-indicators {
+  bottom: 20px;
+}
+
+.custom-carousel .carousel-indicators button {
+  background-color: rgba(255,255,255,0.5);
+  border: none;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.custom-carousel .carousel-indicators .active {
+  background-color: #f5c518;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-carousel {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .carousel-item-custom {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .movie-title {
+    font-size: 2rem;
+  }
+  
+  .movie-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .movie-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .movie-actions .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .carousel-content {
+    padding: 0 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-carousel {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .carousel-item-custom {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .movie-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .movie-description {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+}
