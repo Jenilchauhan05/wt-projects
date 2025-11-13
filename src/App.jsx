@@ -1,17 +1,17 @@
-import Button from './Button'
-import './Product.css'
-import ProductTab from './ProductTab'
+import './App.css'
+import Board from './Board'
+import Todolist from './Todolist'
+import Lottery from './Lottery'
 import Form from './Form'
-import Like from './Like'
 
 function App() {
+
   return (
     <>
-      <h2>Amazing Deals | shop now</h2>
-      <ProductTab />
-      <Button />
       <Form />
-      <Like />
+      <Todolist />
+      <Lottery />
+      {/* <Board /> */}
     </>
   )
 }
